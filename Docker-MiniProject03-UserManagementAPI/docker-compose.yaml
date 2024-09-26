@@ -3,7 +3,7 @@ services:
   application:
     image: docker-miniproject03-usermanagementapi 
     ports:
-      - 8082:8082
+      - 8082:8082 
     depends_on:
       - mysqldb
     volumes:
@@ -15,5 +15,8 @@ services:
       - MYSQL_DATABASE=jrtp
     volumes:
       - /data/mysql
+    # Add network configuration to the mysqldb service
+    networks:
+      - springboot-db-net
 networks:
   springboot-db-net: 
