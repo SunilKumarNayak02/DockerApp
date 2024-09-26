@@ -15,3 +15,5 @@ services:
       - MYSQL_DATABASE=jrtp
     volumes:
       - /data/mysql
+networks:
+  springboot-db-net: 
