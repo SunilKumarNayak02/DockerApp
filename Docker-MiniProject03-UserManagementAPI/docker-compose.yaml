@@ -1,23 +1,17 @@
 version: "3"
-services: 
+services:
   application:
-    image: springboot-mysql-app
+    image: Docker-MiniProject03-UserManagementAPI # This assumes you've built this image with your Dockerfile
     ports:
-      - 8080:8080
-    networks:
-      - springboot-db-net
+      - 8082:8082
     depends_on:
       - mysqldb
     volumes:
       - /data/springboot-app
   mysqldb:
     image: mysql:8.7
-    networks:
-      - springboot-db-net
     environment:
       - MYSQL_ROOT_PASSWORD=ramram
       - MYSQL_DATABASE=jrtp
     volumes:
       - /data/mysql
-networks: 
- springboot-db-net:
